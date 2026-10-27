@@ -24,5 +24,11 @@ To show somewhere else, type a latitude and longitude.
 | 60–80 | Poor | warn |
 | 80–100 | Very poor | bad |
 | above 100 | Extremely poor | bad (ring full) |
+## Terms of the data
+
+Open-Meteo's free API is for non-commercial use, with attribution
+([terms](https://open-meteo.com/en/terms), data under CC BY 4.0); the air quality comes from the Copernicus Atmosphere
+Monitoring Service (CAMS). The detail card credits both ("Data: Open-Meteo.com · CAMS European air quality forecasts
+(Copernicus)"). The plugin asks every 30 minutes, far below the free API's limits.
 
 Licence: Apache-2.0. Data: Open-Meteo (CC BY 4.0), Copernicus Atmosphere Monitoring Service.

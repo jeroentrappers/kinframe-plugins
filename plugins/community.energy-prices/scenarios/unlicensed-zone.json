@@ -1,0 +1,6 @@
+{
+  "description": "An answer that isn't published under CC BY 4.0 (a zone for private use only) is refused, never drawn.",
+  "language": "en",
+  "http": [{ "url": "https://api.energy-charts.info/price?bzn=BE", "body": { "license_info": "Private and internal use only", "unix_seconds": [1792879200, 1792880100], "price": [10, 12] } }],
+  "steps": [{ "call": "update", "expect_error": "not published under CC BY 4.0" }, "render"]
+}

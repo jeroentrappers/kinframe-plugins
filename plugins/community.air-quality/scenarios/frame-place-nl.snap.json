@@ -26,7 +26,26 @@
     },
     {
       "call": "detail",
-      "exported": false
+      "view": {
+        "type": "stack",
+        "items": [
+          {
+            "type": "gauge",
+            "value": 24,
+            "label": "24",
+            "icon": "wind",
+            "tone": "good",
+            "caption": "Redelijk · PM2.5 4 µg/m³"
+          },
+          {
+            "type": "text",
+            "lines": [
+              "Gegevens: Open-Meteo.com",
+              "CAMS Europese luchtkwaliteitsvoorspelling (Copernicus)"
+            ]
+          }
+        ]
+      }
     }
   ]
 }

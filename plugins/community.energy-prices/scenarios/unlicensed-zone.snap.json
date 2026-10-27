@@ -1,0 +1,18 @@
+{
+  "steps": [
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://api.energy-charts.info/price?bzn=BE"
+        }
+      ],
+      "error": "update: Energy-Charts: these prices are not published under CC BY 4.0, so they are not shown"
+    },
+    {
+      "call": "render",
+      "view": null
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 // @ts-check
 // The next departures from a Belgian station (iRail, https://docs.irail.be), as a `list`: time, destination,
 // platform and the delay as a badge. In the band the list shrinks to the times and their delays (kinframe docs/plugins.md §4.3).
+//
+// Terms: iRail is a free, community-run API over NMBS/SNCB data; it asks for a recognisable User-Agent (the frame
+// sends kinframe-frame/<version>), moderate polling (at most once a minute here) and credit, shown in the detail card.
 
 /**
  * @param {any} json an iRail liveboard
@@ -31,6 +34,16 @@ export function board(json, ctx) {
   };
 }
 
+/**
+ * The board with its source under it, for the detail card.
+ * @param {any} json
+ * @param {import('kinframe').Ctx} ctx
+ * @returns {import('kinframe').StackView}
+ */
+export function detail(json, ctx) {
+  return { type: 'stack', items: [board(json, ctx), { type: 'text', lines: [ctx.t('source')] }] };
+}
+
 /** @type {import('kinframe').Plugin} */
 export default {
   async update(ctx) {
@@ -43,5 +56,8 @@ export default {
   },
   render(ctx) {
     return ctx.state.board ? board(ctx.state.board, ctx) : null;
+  },
+  detail(ctx) {
+    return ctx.state.board ? detail(ctx.state.board, ctx) : null;
   },
 };

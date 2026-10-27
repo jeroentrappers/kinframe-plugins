@@ -9,5 +9,7 @@
   "@option.zone.AT": "Oostenrijk",
   "now": "Nu",
   "cheapest": "goedkoopst {time}",
-  "today": "Vandaag"
+  "today": "Vandaag",
+  "source": "Gegevens: Energy-Charts.info",
+  "license": "Bundesnetzagentur | SMARD.de (CC BY 4.0)"
 }

@@ -25,7 +25,24 @@
     },
     {
       "call": "detail",
-      "exported": false
+      "view": {
+        "type": "stack",
+        "items": [
+          {
+            "type": "text",
+            "lines": [
+              "No trains in the next hour"
+            ],
+            "icon": "train"
+          },
+          {
+            "type": "text",
+            "lines": [
+              "Data: iRail (api.irail.be) · NMBS/SNCB"
+            ]
+          }
+        ]
+      }
     }
   ]
 }

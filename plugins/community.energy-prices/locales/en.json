@@ -9,5 +9,7 @@
   "@option.zone.AT": "Austria",
   "now": "Now",
   "cheapest": "cheapest {time}",
-  "today": "Today"
+  "today": "Today",
+  "source": "Data: Energy-Charts.info",
+  "license": "Bundesnetzagentur | SMARD.de (CC BY 4.0)"
 }

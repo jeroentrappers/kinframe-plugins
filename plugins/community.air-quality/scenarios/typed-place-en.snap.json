@@ -26,7 +26,26 @@
     },
     {
       "call": "detail",
-      "exported": false
+      "view": {
+        "type": "stack",
+        "items": [
+          {
+            "type": "gauge",
+            "value": 24,
+            "label": "24",
+            "icon": "wind",
+            "tone": "good",
+            "caption": "Fair · PM2.5 4 µg/m³"
+          },
+          {
+            "type": "text",
+            "lines": [
+              "Data: Open-Meteo.com",
+              "CAMS European air quality forecasts (Copernicus)"
+            ]
+          }
+        ]
+      }
     }
   ]
 }

@@ -144,6 +144,13 @@
             "marker": 68,
             "highlight": 68,
             "highlight_tone": "good"
+          },
+          {
+            "type": "text",
+            "lines": [
+              "Data: Energy-Charts.info",
+              "Bundesnetzagentur | SMARD.de (CC BY 4.0)"
+            ]
           }
         ]
       }

@@ -9,5 +9,6 @@
   "@setting.count.help": "1 to 5 departures.",
   "platform": "pl. {n}",
   "canceled": "canceled",
-  "none": "No trains in the next hour"
+  "none": "No trains in the next hour",
+  "source": "Data: iRail (api.irail.be) · NMBS/SNCB"
 }

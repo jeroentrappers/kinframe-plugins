@@ -1,0 +1,6 @@
+{
+  "description": "Energy-Charts answers 429 Too Many Requests: update fails with a clear message and the next refresh tries again.",
+  "language": "en",
+  "http": [{ "url": "https://api.energy-charts.info/price?bzn=BE", "status": 429, "body": "Too Many Requests" }],
+  "steps": [{ "call": "update", "expect_error": "HTTP 429" }, "render"]
+}

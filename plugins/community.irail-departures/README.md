@@ -16,5 +16,10 @@ every minute.
 - **Internet:** `https://api.irail.be` only.
 
 iRail is a free, community-run service; please keep the refresh at a minute or more.
+## Terms of the data
+
+iRail is free and run by volunteers over NMBS/SNCB data. The plugin asks at most once a minute, the frame identifies
+itself with its own User-Agent (`kinframe-frame/<version>`), and the detail card credits the source ("Data: iRail
+(api.irail.be) · NMBS/SNCB").
 
 Licence: Apache-2.0.

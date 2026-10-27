@@ -9,5 +9,6 @@
   "@setting.count.help": "1 tot 5 vertrekken.",
   "platform": "spoor {n}",
   "canceled": "afgeschaft",
-  "none": "Geen treinen het komende uur"
+  "none": "Geen treinen het komende uur",
+  "source": "Gegevens: iRail (api.irail.be) · NMBS/SNCB"
 }

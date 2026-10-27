@@ -10,5 +10,7 @@
   "moderate": "Matig",
   "poor": "Slecht",
   "very_poor": "Zeer slecht",
-  "extreme": "Extreem slecht"
+  "extreme": "Extreem slecht",
+  "source": "Gegevens: Open-Meteo.com",
+  "model": "CAMS Europese luchtkwaliteitsvoorspelling (Copernicus)"
 }

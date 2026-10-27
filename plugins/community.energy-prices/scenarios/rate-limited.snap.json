@@ -1,0 +1,18 @@
+{
+  "steps": [
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://api.energy-charts.info/price?bzn=BE"
+        }
+      ],
+      "error": "update: Energy-Charts: too many requests (HTTP 429), trying again at the next refresh"
+    },
+    {
+      "call": "render",
+      "view": null
+    }
+  ]
+}

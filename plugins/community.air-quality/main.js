@@ -1,6 +1,9 @@
 // @ts-check
 // The European Air Quality Index (EAQI) from Open-Meteo, where the frame is (ctx.location, which needs
 // `permissions.location`), or at the latitude and longitude the owner typed in instead.
+//
+// Terms: Open-Meteo's free API is for non-commercial use with attribution (CC BY 4.0); the detail card credits it and
+// CAMS (Copernicus), and the plugin asks every 30 minutes at most, far below its daily limit.
 
 /** @type {[number, string, import('kinframe').Tone][]} */
 const LEVELS = [[20, 'good', 'good'], [40, 'fair', 'good'], [60, 'moderate', 'warn'], [80, 'poor', 'warn'], [100, 'very_poor', 'bad'], [Infinity, 'extreme', 'bad']];
@@ -42,5 +45,9 @@ export default {
   },
   render(ctx) {
     return ctx.state.data ? view(ctx.state.data, ctx) : null;
+  },
+  detail(ctx) {
+    const g = ctx.state.data ? view(ctx.state.data, ctx) : null;
+    return g && { type: 'stack', items: [g, { type: 'text', lines: [ctx.t('source'), ctx.t('model')] }] };
   },
 };
