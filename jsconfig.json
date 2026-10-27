@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "noEmit": true,
+    "strict": false,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2020"],
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "kinframe": ["kit/types/kinframe.d.ts"],
+      "kinframe/*": ["kit/types/lib/*.d.ts"]
+    }
+  },
+  "include": ["plugins/*/main.js"]
+}

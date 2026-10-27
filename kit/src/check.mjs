@@ -241,6 +241,10 @@ export function checkPlugin(plugin) {
   }
 
   // Files and documentation.
+  for (const f of ['plugin.json', 'README.md', 'main.js', ...tags.map((t) => `locales/${t}`)]) {
+    const p = join(dir, f);
+    if (existsSync(p) && /\bTODO\b/.test(readFileSync(p, 'utf8'))) errors.push(`${f}: still has a TODO`);
+  }
   if (!existsSync(join(dir, 'README.md'))) errors.push('README.md is missing (the catalog shows it: what the plugin does, how to set it up)');
   for (const f of readdirSync(dir)) {
     if (!['plugin.json', 'main.js', 'locales', 'fixtures', 'scenarios', 'README.md', 'icon.svg', 'jsconfig.json'].includes(f)) warnings.push(`${f}: not part of a plugin folder (not bundled)`);
