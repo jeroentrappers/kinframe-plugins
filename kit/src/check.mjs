@@ -93,11 +93,17 @@ export function checkCode(src, libraries = Object.keys(hostSources().libraries))
     [/\bimport\s*\(/g, 'dynamic import(): a plugin is one module; only static imports of the host libraries'],
     [/(\.|\[\s*['"`])constructor\b\s*['"`]?\s*\]?\s*\(/g, '.constructor(…) can reach Function: not allowed'],
     [/\brequire\s*\(/g, 'require(): there is no module system besides the host libraries'],
-    [/\b(?:fetch|XMLHttpRequest|WebSocket)\s*\(/g, 'fetch/XMLHttpRequest/WebSocket don\'t exist on the frame: use ctx.http and ctx.ws'],
-    [/\bsetTimeout\b|\bsetInterval\b/g, 'there are no timers on the frame: the host calls update on the refresh interval'],
+  ];
+  const hints = [
+    [/(?<![.\w$])(?:fetch|XMLHttpRequest|WebSocket)\s*\(/g, 'fetch/XMLHttpRequest/WebSocket don\'t exist on the frame: use ctx.http and ctx.ws'],
+    [/(?<![.\w$])(?:setTimeout|setInterval)\b/g, 'don\'t count on timers on the frame: the host calls update every refresh interval, invalidate() asks for a render'],
+    [/(?<![.\w$])Date\.now\s*\(/g, 'Date.now() is the device\'s clock; ctx.now() is the frame\'s (and the one scenarios set)'],
   ];
   for (const [re, msg] of rules) {
     for (const m of code.matchAll(re)) errors.push(`main.js:${lineOf(m.index)}: ${msg}`);
+  }
+  for (const [re, msg] of hints) {
+    for (const m of code.matchAll(re)) warnings.push(`main.js:${lineOf(m.index)}: ${msg}`);
   }
   // Imports and re-exports: only `kinframe/<library>`, and only libraries the host has.
   const importRe = /(?:^|[;\n}])\s*(import|export)\b([^;'"`]*?)\bfrom\s*(['"])([^'"]*)\3|(?:^|[;\n}])\s*import\s*(['"])([^'"]*)\5/g;
