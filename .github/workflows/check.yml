@@ -1,0 +1,57 @@
+name: check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  dco:
+    name: DCO sign-off
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Every commit is signed off by its author
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            echo "no base to compare with; checking the last commit only"
+            BASE="$HEAD~1"
+          fi
+          .github/scripts/check-dco.sh "$BASE" "$HEAD"
+
+  kit:
+    name: kit tests, check and scenarios
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+          cache: npm
+      - run: npm ci
+      - name: The kit's own tests
+        run: npm test
+      - name: kit check (manifest rules, code, translations, sizes, secrets)
+        run: npm run kit -- check
+      - name: kit test (every scenario in the sandbox, against its snapshot)
+        run: npm run kit -- test
+      - name: Would publish (no changed bundle for a published version, versions only go up)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          npm run kit -- build --out dist
+          if gh release view registry --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release download registry --repo "$GITHUB_REPOSITORY" --pattern index.json --dir previous
+            npm run kit -- index --previous previous/index.json --out dist
+          else
+            npm run kit -- index --previous none --out dist
+          fi
+          echo "would upload:"; cat dist/publish.txt

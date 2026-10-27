@@ -19,8 +19,8 @@ done
 
 mkdir -p "$host"
 cp "$assets/prelude.js" "$host/prelude.js"
-rm -rf "$host/lib" && mkdir -p "$host/lib" && cp "$assets"/lib/*.js "$host/lib/"
-rm -rf "$host/views" && mkdir -p "$host/views" && cp -R "$views/." "$host/views/"
+rm -rf "${host:?}/lib" && mkdir -p "$host/lib" && cp "$assets"/lib/*.js "$host/lib/"
+rm -rf "${host:?}/views" && mkdir -p "$host/views" && cp -R "$views/." "$host/views/"
 cp "$views/plugin-view.d.ts" "$here/types/plugin-view.d.ts"
 node "$here/src/sync-words.mjs" "$res" > "$host/relative-words.json.tmp" && mv "$host/relative-words.json.tmp" "$host/relative-words.json"
 node "$here/src/schema.mjs" --write

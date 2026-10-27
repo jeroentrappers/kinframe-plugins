@@ -1,0 +1,88 @@
+name: publish
+
+# On every push to main: bundle each plugin version not yet published, write the next index.json, sign it and upload
+# them to the release "registry" (kinframe docs/plugins.md §7, §7.1). Published bundles are never replaced; only
+# index.json and index.json.sig are.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-registry
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run kit -- check
+      - run: npm run kit -- test
+
+  publish:
+    needs: check
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+          cache: npm
+      - run: npm ci
+
+      - name: The current index (none on the first run)
+        id: previous
+        run: |
+          if gh release view registry --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            # The release exists: its index must download and verify, or we stop (never restart at sequence 1).
+            gh release download registry --repo "$GITHUB_REPOSITORY" --pattern index.json --pattern index.json.sig --dir previous
+            npm run kit -- verify --key registry/public-key.b64 previous/index.json
+            echo "file=previous/index.json" >> "$GITHUB_OUTPUT"
+            echo "release=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "file=none" >> "$GITHUB_OUTPUT"
+            echo "release=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build the bundles
+        run: npm run kit -- build --out dist
+
+      - name: Write the next index
+        run: npm run kit -- index --previous "${{ steps.previous.outputs.file }}" --out dist
+
+      - name: Sign and verify it
+        if: hashFiles('dist/index.json') != ''
+        env:
+          REGISTRY_PRIVATE_KEY: ${{ secrets.REGISTRY_PRIVATE_KEY }}
+        run: |
+          npm run kit -- sign dist/index.json
+          npm run kit -- verify --key registry/public-key.b64 dist/index.json
+
+      - name: Upload to the release "registry"
+        if: hashFiles('dist/index.json') != ''
+        run: |
+          if [ "${{ steps.previous.outputs.release }}" = no ]; then
+            gh release create registry --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --latest=false \
+              --title "Plugin registry" \
+              --notes "Signed plugin index (index.json, index.json.sig) and bundles for kinframe frames. Published by CI; bundles are never replaced."
+          fi
+          # New bundles first (never --clobber: a published bundle is never replaced), then the index that names them.
+          while IFS= read -r f; do
+            [ -n "$f" ] && gh release upload registry "dist/$f" --repo "$GITHUB_REPOSITORY"
+          done < dist/publish.txt
+          gh release upload registry dist/index.json dist/index.json.sig --repo "$GITHUB_REPOSITORY" --clobber
+          echo "published: $(grep -m1 '"sequence"' dist/index.json)"

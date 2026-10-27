@@ -1,0 +1,10 @@
+# Every change is reviewed by a maintainer.
+*                       @jeroentrappers
+
+# Manifests carry the permissions (hosts, location, buttons) every frame will grant: always reviewed by hand.
+/plugins/*/plugin.json  @jeroentrappers
+
+# The kit, CI and the registry (public key, revocations) decide what gets published.
+/kit/                   @jeroentrappers
+/.github/               @jeroentrappers
+/registry/              @jeroentrappers
