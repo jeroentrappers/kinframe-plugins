@@ -1,0 +1,7 @@
+kinframe ddbf68db66aa8c853455ca1af2091adbdd8e4d04
+synced 2026-10-27T10:13:03Z by kit/sync-host.sh
+
+prelude.js        android/frame/src/main/assets/plugin-host/prelude.js
+lib/*.js          android/frame/src/main/assets/plugin-host/lib/
+views/            docs/api/plugin-views/ (schema, types, examples, invalid)
+relative-words    android/frame/src/main/res/values*/strings_plugins.xml (plugin_rel_*)
