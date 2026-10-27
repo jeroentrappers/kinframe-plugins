@@ -1,0 +1,54 @@
+[
+    {
+        "code": "AAPL.US",
+        "timestamp": 1793046540,
+        "gmtoffset": 0,
+        "open": 343.92,
+        "high": 347.09,
+        "low": 341.03,
+        "close": 343.91,
+        "volume": 42214934,
+        "previousClose": 347.725,
+        "change": -3.815,
+        "change_p": -1.0971
+    },
+    {
+        "code": "TSLA.US",
+        "timestamp": 1793046540,
+        "gmtoffset": 0,
+        "open": 383.825,
+        "high": 397.27,
+        "low": 383.73,
+        "close": 391.62,
+        "volume": 52740886,
+        "previousClose": 372.22,
+        "change": 19.4,
+        "change_p": 5.212
+    },
+    {
+        "code": "EURUSD.FOREX",
+        "timestamp": 1793101860,
+        "gmtoffset": 0,
+        "open": 1.117817997932434,
+        "high": 1.118067979812622,
+        "low": 1.1139578819274902,
+        "close": 1.1148271560668945,
+        "volume": 0,
+        "previousClose": 1.11736,
+        "change": -0.0025,
+        "change_p": -0.2267
+    },
+    {
+        "code": "BTC-USD.CC",
+        "timestamp": 1793101920,
+        "gmtoffset": 0,
+        "open": 80009.5,
+        "high": 80202.84375,
+        "low": 79380.359375,
+        "close": 79735.609375,
+        "volume": 25725831168,
+        "previousClose": 80006.654950285,
+        "change": -271.0456,
+        "change_p": -0.3388
+    }
+]

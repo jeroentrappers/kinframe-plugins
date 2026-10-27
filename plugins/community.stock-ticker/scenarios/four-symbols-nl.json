@@ -1,0 +1,8 @@
+{
+  "description": "A real answer for four symbols (a share, a fund-sized share, a currency pair and a cryptocurrency), in Dutch, at the first refresh of the day.",
+  "language": "nl",
+  "now": "2026-10-27T09:00:00Z",
+  "settings": { "symbols": "AAPL.US, tsla.us=Tesla, EURUSD.FOREX, BTC-USD.CC" },
+  "secrets": { "api_key": "test-key" },
+  "http": [{ "url": "https://eodhd.com/api/real-time/AAPL.US?s=TSLA.US,EURUSD.FOREX,BTC-USD.CC&fmt=json&api_token=test-key", "bodyFile": "fixtures/quotes.json" }]
+}

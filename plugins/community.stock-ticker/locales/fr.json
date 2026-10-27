@@ -1,0 +1,17 @@
+{
+  "@name": "Cours de bourse",
+  "@description": "Jusqu'à cinq actions, indices, devises ou cryptomonnaies avec leur variation du jour, d'EODHD avec votre propre clé API (Euronext, États-Unis et la plupart des autres places).",
+  "@setting.api_key": "Clé API EODHD",
+  "@setting.api_key.help": "Depuis votre compte sur eodhd.com (un compte gratuit suffit). Uniquement pour votre propre cadre.",
+  "@setting.symbols": "Symboles",
+  "@setting.symbols.help": "Jusqu'à cinq, séparés par des virgules, comme EODHD les écrit : CODE.PLACE. Ajoutez =Nom pour choisir le nom affiché, p. ex. GSPC.INDX=S&P 500.",
+  "@setting.daily_calls": "Appels API par jour",
+  "@setting.daily_calls.help": "La limite quotidienne de votre abonnement EODHD : 20 avec l'abonnement gratuit. Chaque symbole coûte un appel par actualisation ; les actualisations sont réparties entre 9 h et 22 h.",
+  "@setting.label": "Titre",
+  "@setting.label.placeholder": "Bourse",
+  "title": "Bourse",
+  "unknown": "introuvable",
+  "no_symbols": "Ajoutez des symboles dans les réglages",
+  "source": "Données : EODHD · différé de 15–20 min",
+  "updated": "Mis à jour {ago}"
+}

@@ -1,0 +1,22 @@
+{
+  "steps": [
+    {
+      "call": "start",
+      "exported": false
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://eodhd.com/api/real-time/VTI.US?fmt=json&api_token=wrong-key"
+        }
+      ],
+      "error": "update: EODHD: the API key was refused (HTTP 401)"
+    },
+    {
+      "call": "render",
+      "view": null
+    }
+  ]
+}

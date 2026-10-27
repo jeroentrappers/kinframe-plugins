@@ -1,0 +1,8 @@
+{
+  "description": "EODHD refuses the key: a clear error, nothing shown yet.",
+  "now": "2026-10-27T09:00:00Z",
+  "settings": { "symbols": "VTI.US" },
+  "secrets": { "api_key": "wrong-key" },
+  "http": [{ "url": "https://eodhd.com/api/real-time/VTI.US?fmt=json&api_token=wrong-key", "status": 401, "body": "Unauthenticated" }],
+  "steps": ["start", { "call": "update", "expect_error": "API key was refused" }, "render"]
+}

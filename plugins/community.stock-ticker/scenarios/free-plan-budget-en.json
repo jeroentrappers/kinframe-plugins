@@ -1,0 +1,46 @@
+{
+  "description": "Four symbols on the free plan's 20 calls: five refreshes a day, at least 2 h 36 min apart, between 9:00 and 22:00; one in between and one at night ask nothing.",
+  "now": "2026-10-27T08:00:00Z",
+  "settings": {
+    "symbols": "AAPL.US, TSLA.US, EURUSD.FOREX, BTC-USD.CC"
+  },
+  "secrets": {
+    "api_key": "test-key"
+  },
+  "http": [
+    {
+      "urlPattern": "^https://eodhd\\.com/api/real-time/AAPL\\.US\\?",
+      "bodyFile": "fixtures/quotes.json"
+    }
+  ],
+  "steps": [
+    "start",
+    "update",
+    "render",
+    {
+      "advance": 900000
+    },
+    "update",
+    {
+      "advance": 9900000
+    },
+    "update",
+    {
+      "advance": 10800000
+    },
+    "update",
+    {
+      "advance": 10800000
+    },
+    "update",
+    {
+      "advance": 10800000
+    },
+    "update",
+    {
+      "advance": 3600000
+    },
+    "update",
+    "detail"
+  ]
+}

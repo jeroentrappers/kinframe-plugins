@@ -1,0 +1,17 @@
+{
+  "@name": "Beurskoersen",
+  "@description": "Tot vijf aandelen, indexen, munten of cryptomunten met hun verandering vandaag, van EODHD met je eigen API-sleutel (Euronext, VS en de meeste andere beurzen).",
+  "@setting.api_key": "EODHD API-sleutel",
+  "@setting.api_key.help": "Uit je account op eodhd.com (een gratis account volstaat). Alleen voor je eigen fotolijst.",
+  "@setting.symbols": "Symbolen",
+  "@setting.symbols.help": "Tot vijf, gescheiden door komma's, zoals EODHD ze schrijft: CODE.BEURS. Voeg =Naam toe om de getoonde naam te kiezen, bv. GSPC.INDX=S&P 500.",
+  "@setting.daily_calls": "API-oproepen per dag",
+  "@setting.daily_calls.help": "De daglimiet van je EODHD-abonnement: 20 bij het gratis abonnement. Elk symbool kost één oproep per verversing; de verversingen worden verdeeld tussen 9:00 en 22:00.",
+  "@setting.label": "Titel",
+  "@setting.label.placeholder": "Beurs",
+  "title": "Beurs",
+  "unknown": "niet gevonden",
+  "no_symbols": "Voeg symbolen toe in de instellingen",
+  "source": "Gegevens: EODHD · 15–20 min vertraagd",
+  "updated": "Bijgewerkt {ago}"
+}

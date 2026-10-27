@@ -1,0 +1,10 @@
+{
+  "description": "The plan's calls are used up (HTTP 402), in French: the last quotes stay and nothing more is asked today.",
+  "language": "fr",
+  "now": "2026-10-27T15:00:00Z",
+  "settings": { "symbols": "VTI.US" },
+  "secrets": { "api_key": "test-key" },
+  "store": { "quotes": "{\"symbols\":\"VTI.US\",\"at\":1793091600000,\"quotes\":[{\"code\":\"VTI.US\",\"close\":375.59,\"prev\":373.01,\"change\":2.58,\"pct\":0.6917,\"ts\":1793046540000}]}" },
+  "http": [{ "url": "https://eodhd.com/api/real-time/VTI.US?fmt=json&api_token=test-key", "status": 402, "body": "You exceeded your daily API requests limit" }],
+  "steps": ["start", { "call": "update", "expect_error": "HTTP 402" }, "render", { "advance": 7200000 }, "update", "detail"]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "community.stock-ticker",
+  "name": "Stock ticker",
+  "version": "1.0.0",
+  "api": 1,
+  "author": { "name": "kinframe", "url": "https://github.com/jeroentrappers/kinframe" },
+  "license": "Apache-2.0",
+  "description": "Up to five shares, indices, currencies or cryptocurrencies with their change today, from EODHD with your own API key (Euronext, US and most other exchanges).",
+  "refresh": { "min_seconds": 900, "default_seconds": 900 },
+  "permissions": { "http": ["https://eodhd.com"] },
+  "settings": [
+    { "key": "api_key", "type": "secret", "label": "EODHD API key", "required": true, "help": "From your account at eodhd.com (a free account works). Used only for your own frame." },
+    { "key": "symbols", "type": "text", "label": "Symbols", "required": true, "placeholder": "UCB.BR, ASML.AS, AAPL.US, EURUSD.FOREX, BTC-USD.CC", "help": "Up to five, separated by commas, as EODHD writes them: CODE.EXCHANGE. Add =Name to choose the name shown, e.g. GSPC.INDX=S&P 500." },
+    { "key": "daily_calls", "type": "number", "label": "API calls per day", "default": 20, "help": "Your EODHD plan's daily limit: 20 on the free plan. Every symbol costs one call per refresh; the refreshes are spread between 9:00 and 22:00." },
+    { "key": "label", "type": "text", "label": "Title", "placeholder": "Markets" }
+  ]
+}

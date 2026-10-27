@@ -1,0 +1,172 @@
+{
+  "steps": [
+    {
+      "call": "start",
+      "exported": false
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://eodhd.com/api/real-time/AAPL.US?s=TSLA.US,EURUSD.FOREX,BTC-USD.CC&fmt=json&api_token=test-key"
+        }
+      ]
+    },
+    {
+      "call": "render",
+      "view": {
+        "type": "list",
+        "label": "Markets",
+        "rows": [
+          {
+            "time": "AAPL",
+            "title": "343.91 $",
+            "badge": "−1.10 %",
+            "icon": "arrow-down",
+            "tone": "bad"
+          },
+          {
+            "time": "TSLA",
+            "title": "391.62 $",
+            "badge": "+5.21 %",
+            "icon": "arrow-up",
+            "tone": "good"
+          },
+          {
+            "time": "EUR/USD",
+            "title": "1.1148",
+            "badge": "−0.23 %",
+            "icon": "arrow-down",
+            "tone": "bad"
+          },
+          {
+            "time": "BTC",
+            "title": "79,736 $",
+            "badge": "−0.34 %",
+            "icon": "arrow-down",
+            "tone": "bad"
+          }
+        ]
+      }
+    },
+    {
+      "advance": 900000
+    },
+    {
+      "call": "update"
+    },
+    {
+      "advance": 9900000
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://eodhd.com/api/real-time/AAPL.US?s=TSLA.US,EURUSD.FOREX,BTC-USD.CC&fmt=json&api_token=test-key"
+        }
+      ]
+    },
+    {
+      "advance": 10800000
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://eodhd.com/api/real-time/AAPL.US?s=TSLA.US,EURUSD.FOREX,BTC-USD.CC&fmt=json&api_token=test-key"
+        }
+      ]
+    },
+    {
+      "advance": 10800000
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://eodhd.com/api/real-time/AAPL.US?s=TSLA.US,EURUSD.FOREX,BTC-USD.CC&fmt=json&api_token=test-key"
+        }
+      ]
+    },
+    {
+      "advance": 10800000
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://eodhd.com/api/real-time/AAPL.US?s=TSLA.US,EURUSD.FOREX,BTC-USD.CC&fmt=json&api_token=test-key"
+        }
+      ]
+    },
+    {
+      "advance": 3600000
+    },
+    {
+      "call": "update"
+    },
+    {
+      "call": "detail",
+      "view": {
+        "type": "stack",
+        "items": [
+          {
+            "type": "list",
+            "label": "Markets",
+            "rows": [
+              {
+                "time": "AAPL",
+                "title": "343.91 $",
+                "detail": "−3.82",
+                "badge": "−1.10 %",
+                "icon": "arrow-down",
+                "tone": "bad"
+              },
+              {
+                "time": "TSLA",
+                "title": "391.62 $",
+                "detail": "+19.40",
+                "badge": "+5.21 %",
+                "icon": "arrow-up",
+                "tone": "good"
+              },
+              {
+                "time": "EUR/USD",
+                "title": "1.1148",
+                "detail": "−0.0025",
+                "badge": "−0.23 %",
+                "icon": "arrow-down",
+                "tone": "bad"
+              },
+              {
+                "time": "BTC",
+                "title": "79,736 $",
+                "detail": "−271",
+                "badge": "−0.34 %",
+                "icon": "arrow-down",
+                "tone": "bad"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "lines": [
+              "Data: EODHD · 15–20 min delayed",
+              "Updated 1 h ago"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "store": {
+    "calls": "{\"day\":\"2026-10-27\",\"used\":20}",
+    "quotes": "{\"symbols\":\"AAPL.US,TSLA.US,EURUSD.FOREX,BTC-USD.CC\",\"at\":1793131200000,\"quotes\":[{\"code\":\"AAPL.US\",\"close\":343.91,\"prev\":347.725,\"change\":-3.815,\"pct\":-1.0971,\"ts\":1793046540000},{\"code\":\"TSLA.US\",\"close\":391.62,\"prev\":372.22,\"change\":19.4,\"pct\":5.212,\"ts\":1793046540000},{\"code\":\"EURUSD.FOREX\",\"close\":1.1148271560668945,\"prev\":1.11736,\"change\":-0.0025,\"pct\":-0.2267,\"ts\":1793101860000},{\"code\":\"BTC-USD.CC\",\"close\":79735.609375,\"prev\":80006.654950285,\"change\":-271.0456,\"pct\":-0.3388,\"ts\":1793101920000}]}"
+  },
+  "dataTime": "2026-10-27T11:52:00.000Z"
+}
