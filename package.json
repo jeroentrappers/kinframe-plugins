@@ -10,7 +10,7 @@
   },
   "scripts": {
     "kit": "node kit/bin/kit.mjs",
-    "test": "node --test kit/test/",
+    "test": "node --test 'kit/test/*.test.mjs'",
     "check": "node kit/bin/kit.mjs check && node kit/bin/kit.mjs test"
   },
   "dependencies": {

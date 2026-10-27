@@ -179,19 +179,31 @@ export async function runScenario(plugin, file, { timeoutMs } = {}) {
 
 export const snapText = (record) => JSON.stringify(record, null, 2) + '\n';
 
-/** A short line diff of two texts (first difference with a little context). */
-export function diffText(expected, actual, context = 3) {
+/** A line diff of two texts (LCS), changed lines with a little context, at most `max` lines. */
+export function diffText(expected, actual, context = 2, max = 60) {
   const a = expected.split('\n'), b = actual.split('\n');
-  let i = 0;
-  while (i < a.length && i < b.length && a[i] === b[i]) i++;
-  let ea = a.length - 1, eb = b.length - 1;
-  while (ea >= i && eb >= i && a[ea] === b[eb]) { ea--; eb--; }
+  // Trim the common head and tail, then LCS on the middle.
+  let s = 0;
+  while (s < a.length && s < b.length && a[s] === b[s]) s++;
+  let ea = a.length, eb = b.length;
+  while (ea > s && eb > s && a[ea - 1] === b[eb - 1]) { ea--; eb--; }
+  const A = a.slice(s, ea), B = b.slice(s, eb);
+  const L = Array.from({ length: A.length + 1 }, () => new Uint32Array(B.length + 1));
+  for (let i = A.length - 1; i >= 0; i--) for (let j = B.length - 1; j >= 0; j--) L[i][j] = A[i] === B[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const ops = [];
+  for (let k = Math.max(0, s - context); k < s; k++) ops.push('  ' + a[k]);
+  let i = 0, j = 0;
+  while (i < A.length || j < B.length) {
+    if (i < A.length && j < B.length && A[i] === B[j]) { ops.push('  ' + A[i]); i++; j++; }
+    else if (i < A.length && (j >= B.length || L[i + 1][j] >= L[i][j + 1])) ops.push('- ' + A[i++]);
+    else ops.push('+ ' + B[j++]);
+  }
+  for (let k = ea; k < Math.min(a.length, ea + context); k++) ops.push('  ' + a[k]);
+  // Keep only changes and their context.
+  const keep = ops.map((o, k) => ops.slice(Math.max(0, k - context), k + context + 1).some((x) => x[0] !== ' '));
   const out = [];
-  for (let k = Math.max(0, i - context); k < i; k++) out.push('  ' + a[k]);
-  for (let k = i; k <= ea && k < i + 20; k++) out.push('- ' + a[k]);
-  for (let k = i; k <= eb && k < i + 20; k++) out.push('+ ' + b[k]);
-  for (let k = ea + 1; k < Math.min(a.length, ea + 1 + context); k++) out.push('  ' + a[k]);
-  return out.join('\n');
+  ops.forEach((o, k) => { if (keep[k]) out.push(o); else if (out[out.length - 1] !== '  …') out.push('  …'); });
+  return (out.length > max ? [...out.slice(0, max), `  … ${out.length - max} more lines`] : out).join('\n');
 }
 
 /** Runs a scenario and compares (or with `update`, writes) its snapshot. */
