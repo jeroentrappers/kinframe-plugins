@@ -1,0 +1,7 @@
+{
+  "description": "No train goes that way: a quiet line instead of a list. French isn't translated, so the English text shows.",
+  "language": "fr",
+  "now": "2026-10-25T21:24:46Z",
+  "settings": { "station": "Denderleeuw", "towards": "Arlon" },
+  "http": [{ "url": "https://api.irail.be/v1/liveboard/?station=Denderleeuw&format=json&arrdep=departure&lang=fr", "bodyFile": "fixtures/liveboard-denderleeuw.json" }]
+}

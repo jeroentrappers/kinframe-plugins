@@ -1,0 +1,7 @@
+{
+  "description": "No bins today or tomorrow: the widget hides (a view of type none).",
+  "language": "en",
+  "now": "2026-10-28T18:00:00Z",
+  "settings": { "calendar_url": "https://example.org/afvalkalender.ics" },
+  "http": [{ "url": "https://example.org/afvalkalender.ics", "bodyFile": "fixtures/afvalkalender.ics" }]
+}

@@ -1,0 +1,7 @@
+{
+  "@name": "Afval",
+  "@description": "Welke containers vandaag of morgen buiten moeten, uit de afvalkalender van je gemeente (een iCal-link).",
+  "@setting.calendar_url": "Afvalkalender (iCal-link)",
+  "@setting.calendar_url.help": "Het iCal-adres dat je gemeente of afvalintercommunale publiceert (beginnend met https://).",
+  "@setting.calendar_url.placeholder": "https://example.org/afvalkalender.ics"
+}

@@ -1,0 +1,6 @@
+{
+  "description": "Half past midnight on the day the clocks go back (100 quarter hours), in Dutch: now marked, the cheapest quarter hour still to come highlighted.",
+  "language": "nl",
+  "now": "2026-10-25T00:30:00Z",
+  "http": [{ "url": "https://api.energy-charts.info/price?bzn=BE", "bodyFile": "fixtures/be-2026-10-25.json" }]
+}

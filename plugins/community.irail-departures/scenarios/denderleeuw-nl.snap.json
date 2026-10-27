@@ -1,0 +1,49 @@
+{
+  "steps": [
+    {
+      "call": "start",
+      "exported": false
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://api.irail.be/v1/liveboard/?station=Denderleeuw&format=json&arrdep=departure&lang=nl"
+        }
+      ]
+    },
+    {
+      "call": "render",
+      "view": {
+        "type": "list",
+        "label": "Denderleeuw",
+        "rows": [
+          {
+            "time": "22:20",
+            "title": "Brussels Airport - Zaventem",
+            "detail": "spoor 2",
+            "icon": "train"
+          },
+          {
+            "time": "22:23",
+            "title": "Brussel-Noord",
+            "detail": "spoor 7",
+            "badge": "+3",
+            "icon": "train"
+          },
+          {
+            "time": "22:26",
+            "title": "Brussel-Luxemburg",
+            "detail": "spoor 4",
+            "icon": "train"
+          }
+        ]
+      }
+    },
+    {
+      "call": "detail",
+      "exported": false
+    }
+  ]
+}

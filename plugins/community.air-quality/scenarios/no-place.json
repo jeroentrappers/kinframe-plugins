@@ -1,0 +1,5 @@
+{
+  "description": "No place typed in and the frame has none: nothing is fetched and nothing is drawn.",
+  "language": "en",
+  "steps": ["update", "render"]
+}

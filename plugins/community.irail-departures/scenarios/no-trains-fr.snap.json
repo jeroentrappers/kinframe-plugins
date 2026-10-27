@@ -1,0 +1,31 @@
+{
+  "steps": [
+    {
+      "call": "start",
+      "exported": false
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://api.irail.be/v1/liveboard/?station=Denderleeuw&format=json&arrdep=departure&lang=fr"
+        }
+      ]
+    },
+    {
+      "call": "render",
+      "view": {
+        "type": "text",
+        "lines": [
+          "No trains in the next hour"
+        ],
+        "icon": "train"
+      }
+    },
+    {
+      "call": "detail",
+      "exported": false
+    }
+  ]
+}

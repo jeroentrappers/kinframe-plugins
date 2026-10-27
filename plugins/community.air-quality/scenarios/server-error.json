@@ -1,0 +1,9 @@
+{
+  "description": "Open-Meteo answers 500: update fails (the frame keeps the last view) and render has nothing to draw.",
+  "language": "en",
+  "location": { "latitude": 50.91, "longitude": 4.11 },
+  "http": [
+    { "urlPattern": "^https://air-quality-api\\.open-meteo\\.com/v1/air-quality\\?", "status": 500, "body": "upstream error" }
+  ],
+  "steps": [{ "call": "update", "expect_error": "HTTP 500" }, "render"]
+}

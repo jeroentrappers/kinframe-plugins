@@ -1,0 +1,13 @@
+{
+  "@name": "Departures",
+  "@description": "The next trains from a Belgian station, with delays, from the iRail API.",
+  "@setting.station": "Station",
+  "@setting.station.placeholder": "Denderleeuw",
+  "@setting.towards": "Only trains towards (optional)",
+  "@setting.towards.placeholder": "Brussels",
+  "@setting.count": "How many",
+  "@setting.count.help": "1 to 5 departures.",
+  "platform": "pl. {n}",
+  "canceled": "canceled",
+  "none": "No trains in the next hour"
+}

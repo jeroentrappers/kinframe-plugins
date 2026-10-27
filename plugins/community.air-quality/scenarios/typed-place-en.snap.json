@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "call": "start",
+      "exported": false
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=51.05&longitude=3.72&current=european_aqi,pm2_5,pm10"
+        }
+      ]
+    },
+    {
+      "call": "render",
+      "view": {
+        "type": "gauge",
+        "value": 24,
+        "label": "24",
+        "icon": "wind",
+        "tone": "good",
+        "caption": "Fair · PM2.5 4 µg/m³"
+      }
+    },
+    {
+      "call": "detail",
+      "exported": false
+    }
+  ]
+}

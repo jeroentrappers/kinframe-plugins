@@ -1,0 +1,7 @@
+{
+  "description": "The evening before: tomorrow's bins, in Dutch (ctx.format.day gives the frame's own word).",
+  "language": "nl",
+  "now": "2026-10-25T18:00:00Z",
+  "settings": { "calendar_url": "https://example.org/afvalkalender.ics" },
+  "http": [{ "url": "https://example.org/afvalkalender.ics", "bodyFile": "fixtures/afvalkalender.ics" }]
+}

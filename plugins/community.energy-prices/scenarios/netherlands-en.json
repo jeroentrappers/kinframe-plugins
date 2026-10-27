@@ -1,0 +1,7 @@
+{
+  "description": "Another market zone in English, in the afternoon.",
+  "language": "en",
+  "now": "2026-10-25T15:10:00Z",
+  "settings": { "zone": "NL" },
+  "http": [{ "url": "https://api.energy-charts.info/price?bzn=NL", "bodyFile": "fixtures/be-2026-10-25.json" }]
+}

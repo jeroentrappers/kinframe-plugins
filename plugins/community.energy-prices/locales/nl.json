@@ -1,0 +1,13 @@
+{
+  "@name": "Stroomprijs",
+  "@description": "De day-aheadprijs van stroom per kwartier vandaag (Energy-Charts, Fraunhofer ISE), nu en het goedkoopste moment.",
+  "@setting.zone": "Marktzone",
+  "@option.zone.BE": "België",
+  "@option.zone.NL": "Nederland",
+  "@option.zone.DE-LU": "Duitsland en Luxemburg",
+  "@option.zone.FR": "Frankrijk",
+  "@option.zone.AT": "Oostenrijk",
+  "now": "Nu",
+  "cheapest": "goedkoopst {time}",
+  "today": "Vandaag"
+}

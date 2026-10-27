@@ -1,0 +1,14 @@
+{
+  "id": "community.energy-prices",
+  "name": "Electricity price",
+  "version": "1.0.0",
+  "api": 1,
+  "author": { "name": "kinframe", "url": "https://github.com/jeroentrappers/kinframe" },
+  "license": "Apache-2.0",
+  "description": "Today's day-ahead electricity price per quarter hour (Energy-Charts, Fraunhofer ISE), now and the cheapest moment.",
+  "refresh": { "min_seconds": 300, "default_seconds": 900 },
+  "permissions": { "http": ["https://api.energy-charts.info"] },
+  "settings": [
+    { "key": "zone", "type": "choice", "label": "Market zone", "options": ["BE", "NL", "DE-LU", "FR", "AT"], "default": "BE" }
+  ]
+}

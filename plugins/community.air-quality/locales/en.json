@@ -1,0 +1,14 @@
+{
+  "@name": "Air quality",
+  "@description": "The European Air Quality Index and fine dust where you live, from Open-Meteo.",
+  "@setting.latitude": "Latitude",
+  "@setting.latitude.help": "Leave empty to use the frame's own place.",
+  "@setting.longitude": "Longitude",
+  "@setting.longitude.help": "Leave empty to use the frame's own place.",
+  "good": "Good",
+  "fair": "Fair",
+  "moderate": "Moderate",
+  "poor": "Poor",
+  "very_poor": "Very poor",
+  "extreme": "Extremely poor"
+}

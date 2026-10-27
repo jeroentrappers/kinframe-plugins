@@ -1,0 +1,10 @@
+{
+  "description": "The latitude and longitude the owner typed in win over the frame's place.",
+  "language": "en",
+  "now": "2026-10-25T21:05:00Z",
+  "settings": { "latitude": 51.05, "longitude": 3.72 },
+  "location": { "latitude": 50.9, "longitude": 4.1 },
+  "http": [
+    { "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=51.05&longitude=3.72&current=european_aqi,pm2_5,pm10", "bodyFile": "fixtures/affligem.json" }
+  ]
+}

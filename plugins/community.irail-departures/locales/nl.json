@@ -1,0 +1,13 @@
+{
+  "@name": "Vertrekken",
+  "@description": "De volgende treinen uit een Belgisch station, met vertragingen, van de iRail-API.",
+  "@setting.station": "Station",
+  "@setting.station.placeholder": "Denderleeuw",
+  "@setting.towards": "Alleen treinen richting (optioneel)",
+  "@setting.towards.placeholder": "Brussel",
+  "@setting.count": "Hoeveel",
+  "@setting.count.help": "1 tot 5 vertrekken.",
+  "platform": "spoor {n}",
+  "canceled": "afgeschaft",
+  "none": "Geen treinen het komende uur"
+}

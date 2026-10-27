@@ -1,0 +1,33 @@
+{
+  "steps": [
+    {
+      "call": "start",
+      "exported": false
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://example.org/afvalkalender.ics"
+        }
+      ]
+    },
+    {
+      "call": "render",
+      "view": {
+        "type": "text",
+        "lines": [
+          "Today",
+          "PMD, Papier en karton"
+        ],
+        "icon": "trash",
+        "tone": "accent"
+      }
+    },
+    {
+      "call": "detail",
+      "exported": false
+    }
+  ]
+}

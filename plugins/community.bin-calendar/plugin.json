@@ -1,0 +1,16 @@
+{
+  "id": "community.bin-calendar",
+  "name": "Bin day",
+  "version": "1.0.0",
+  "api": 1,
+  "author": { "name": "kinframe", "url": "https://github.com/jeroentrappers/kinframe" },
+  "license": "Apache-2.0",
+  "description": "Which bins go out today or tomorrow, from your municipality's waste calendar (an iCal link).",
+  "refresh": { "min_seconds": 3600, "default_seconds": 21600 },
+  "permissions": { "http": ["settings.calendar_url"] },
+  "settings": [
+    { "key": "calendar_url", "type": "url", "label": "Waste calendar (iCal link)", "required": true,
+      "help": "The iCal address your municipality or waste company publishes (starting with https://).",
+      "placeholder": "https://example.org/afvalkalender.ics" }
+  ]
+}

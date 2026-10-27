@@ -1,0 +1,18 @@
+{
+  "steps": [
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=50.91&longitude=4.11&current=european_aqi,pm2_5,pm10"
+        }
+      ],
+      "error": "update: Open-Meteo: HTTP 500"
+    },
+    {
+      "call": "render",
+      "view": null
+    }
+  ]
+}

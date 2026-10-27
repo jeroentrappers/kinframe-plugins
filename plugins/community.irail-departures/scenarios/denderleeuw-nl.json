@@ -1,0 +1,7 @@
+{
+  "description": "The next three trains from Denderleeuw in Dutch: time, destination, platform and the delay as a badge.",
+  "language": "nl",
+  "now": "2026-10-25T21:24:46Z",
+  "settings": { "station": "Denderleeuw", "count": 3 },
+  "http": [{ "url": "https://api.irail.be/v1/liveboard/?station=Denderleeuw&format=json&arrdep=departure&lang=nl", "bodyFile": "fixtures/liveboard-denderleeuw.json" }]
+}

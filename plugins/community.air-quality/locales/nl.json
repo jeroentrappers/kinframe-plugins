@@ -1,0 +1,14 @@
+{
+  "@name": "Luchtkwaliteit",
+  "@description": "De Europese luchtkwaliteitsindex en fijnstof waar je woont, van Open-Meteo.",
+  "@setting.latitude": "Breedtegraad",
+  "@setting.latitude.help": "Laat leeg om de plaats van de fotolijst zelf te gebruiken.",
+  "@setting.longitude": "Lengtegraad",
+  "@setting.longitude.help": "Laat leeg om de plaats van de fotolijst zelf te gebruiken.",
+  "good": "Goed",
+  "fair": "Redelijk",
+  "moderate": "Matig",
+  "poor": "Slecht",
+  "very_poor": "Zeer slecht",
+  "extreme": "Extreem slecht"
+}

@@ -1,0 +1,13 @@
+{
+  "@name": "Electricity price",
+  "@description": "Today's day-ahead electricity price per quarter hour (Energy-Charts, Fraunhofer ISE), now and the cheapest moment.",
+  "@setting.zone": "Market zone",
+  "@option.zone.BE": "Belgium",
+  "@option.zone.NL": "Netherlands",
+  "@option.zone.DE-LU": "Germany and Luxembourg",
+  "@option.zone.FR": "France",
+  "@option.zone.AT": "Austria",
+  "now": "Now",
+  "cheapest": "cheapest {time}",
+  "today": "Today"
+}

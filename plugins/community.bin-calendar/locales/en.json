@@ -1,0 +1,7 @@
+{
+  "@name": "Bin day",
+  "@description": "Which bins go out today or tomorrow, from your municipality's waste calendar (an iCal link).",
+  "@setting.calendar_url": "Waste calendar (iCal link)",
+  "@setting.calendar_url.help": "The iCal address your municipality or waste company publishes (starting with https://).",
+  "@setting.calendar_url.placeholder": "https://example.org/afvalkalender.ics"
+}

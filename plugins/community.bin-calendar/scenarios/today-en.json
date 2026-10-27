@@ -1,0 +1,7 @@
+{
+  "description": "On the day itself, in the accent tone.",
+  "language": "en",
+  "now": "2026-10-26T06:30:00Z",
+  "settings": { "calendar_url": "https://example.org/afvalkalender.ics" },
+  "http": [{ "url": "https://example.org/afvalkalender.ics", "bodyFile": "fixtures/afvalkalender.ics" }]
+}

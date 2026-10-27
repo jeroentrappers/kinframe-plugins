@@ -1,0 +1,9 @@
+{
+  "description": "The frame's own place (coarse, two decimals) in Dutch: a fair index, as a gauge.",
+  "language": "nl",
+  "now": "2026-10-25T21:05:00Z",
+  "location": { "latitude": 50.9087, "longitude": 4.1065 },
+  "http": [
+    { "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=50.91&longitude=4.11&current=european_aqi,pm2_5,pm10", "bodyFile": "fixtures/affligem.json" }
+  ]
+}

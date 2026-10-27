@@ -1,0 +1,37 @@
+{
+  "steps": [
+    {
+      "call": "start",
+      "exported": false
+    },
+    {
+      "call": "update",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://api.irail.be/v1/liveboard/?station=Denderleeuw&format=json&arrdep=departure&lang=en"
+        }
+      ]
+    },
+    {
+      "call": "render",
+      "view": {
+        "type": "list",
+        "label": "Denderleeuw",
+        "rows": [
+          {
+            "time": "22:41",
+            "title": "Gent-Sint-Pieters",
+            "detail": "pl. 4",
+            "badge": "+1",
+            "icon": "train"
+          }
+        ]
+      }
+    },
+    {
+      "call": "detail",
+      "exported": false
+    }
+  ]
+}

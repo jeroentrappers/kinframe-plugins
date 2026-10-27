@@ -1,0 +1,7 @@
+{
+  "description": "Only trains towards Gent, in English.",
+  "language": "en",
+  "now": "2026-10-25T21:24:46Z",
+  "settings": { "station": "Denderleeuw", "towards": "gent" },
+  "http": [{ "url": "https://api.irail.be/v1/liveboard/?station=Denderleeuw&format=json&arrdep=departure&lang=en", "bodyFile": "fixtures/liveboard-denderleeuw.json" }]
+}
