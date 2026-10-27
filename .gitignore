@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+# Never commit a private key (kit keygen writes these).
+*.pem
+registry-private*

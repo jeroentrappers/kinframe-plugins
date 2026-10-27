@@ -1,0 +1,21 @@
+{
+  "name": "kinframe-plugins",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Community plugins for kinframe photo frames, and the plugin kit to write, test and publish them.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "kit": "node kit/bin/kit.mjs",
+    "test": "node --test kit/test/",
+    "check": "node kit/bin/kit.mjs check && node kit/bin/kit.mjs test"
+  },
+  "dependencies": {
+    "@jitl/quickjs-wasmfile-release-sync": "0.32.0",
+    "ajv": "8.20.0",
+    "quickjs-emscripten-core": "0.32.0"
+  }
+}
